@@ -1,0 +1,60 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>代理商后台系统(焕我生活)</title>
+    <link href="../style/login.css" rel="stylesheet" type="text/css"/>
+    <script src="../bao/material-kit-master/assets/js/jquery.min.js"></script>
+<script type="text/javascript">
+    function OnLogin() {
+        var uname = $("#input1").val();
+        var pwd = $("#input2").val();
+        if (uname == "")
+            alert("请输入用户名");
+        else if (pwd == "")
+            alert("请输入密码");
+        else {
+            $.ajax({
+                type: "GET",
+                cache: false,
+                url: "Ajax.aspx",
+                data: "AjaxType=UserLogin&uname=" + encodeURIComponent(uname) + "&pwd=" + encodeURIComponent(pwd) + "&ran=" + Math.random() + "",
+                dataType: 'text',
+                success: UserLoginSucess,
+                error: AjaxError
+            });
+        }
+    }
+
+    function UserLoginSucess(result) {
+        if (result == "0")
+            location.href = "/main.html"; 
+        else
+            alert(result);
+    }
+
+    function AjaxError(result, status) {
+        alert("服务器忙。请稍后再试!");
+    }
+
+    function ResetForm() {
+        $("#input1").val("");
+        $("#input2").val("");
+    }
+</script>
+</head>
+
+<body>  
+<div class="outerDiv">
+  <div class="mainDiv">  
+  <div class="LoginTitleDiv">
+  代理商后台系统(焕我生活)
+  </div>  
+    <div class="btnDiv"><img src="../images/login.png" width="81" onclick="OnLogin()" height="30" class="btnStyle" onmouseover="this.src='../images/Login1.png'" onmouseout="this.src='../images/Login.png'" /><img src="../images/cacel.png" onmouseover="this.src='../images/cacel1.png'" width="81"  height="30" class="btnStyle"  onclick="ResetForm()"  onmouseout="this.src='../images/cacel.png'" /></div>
+    <input type="text" class="UNameInputStyle" name="input1" id="input1" value="" />
+    <input type="password" class="PWdInputStyle" name="input2" id="input2"  value="" />
+  </div>
+</div>
+</body>
+</html>

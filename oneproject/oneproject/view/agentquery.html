@@ -1,0 +1,401 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>
+        博森美国际(香港）有限公司</title>
+    <script src="../bao/material-kit-master/assets/js/jquery.min.js"></script>
+    <style type="text/css">
+        .fwmain
+        {
+            height: 600px;
+            background-image: url('../images/fwbg.jpg');
+            padding-top: 30px;
+        }
+        .fwmain .fwcenter
+        {
+            background: url('../images/agentbg.jpg');
+            border-radius: 20px;
+            border: 2px solid #fff;
+            margin: 0px auto;
+            width: 1038px;
+            height: 558px;
+            position: relative;
+        }
+        .fwmain .fwcenter .wsmmimg
+        {
+            box-shadow: 10px 10px 50px #111;
+            margin: 50px 50px;
+        }
+        .fwmain .fwcenter .inputBig, .fwmain .fwcenter .inputweixin
+        {
+            height: 30px;
+            line-height: 30px;
+            font-size: 18px;
+            font-family: "微软雅黑" , "arial";
+            outline: none;
+            border: 0px solid red;
+            box-shadow: 2px 2px 8px #111;
+            color: #000000;
+            padding-left: 10px;
+            width: 235px;
+            font-size: 15px;
+            border-radius: 20px;
+        }
+        
+        .fwmain .fwcenter #btnfw
+        {
+            width: 80px;
+            height: 30px;
+            background-color: transparent;
+            border: 0px;
+        }
+        
+        .fwtitle
+        {
+            position: absolute;
+            left: 436px;
+            top: 130px;
+            text-align: left;
+            color: #ab7711;
+            font-family: 微软雅黑;
+        }
+        .changeTypeDiv
+        {
+            position: absolute;
+            bottom: 1px;
+            left: 480px;
+            right: 1px;
+            top: 210px;
+            height: 15px;
+            width: 244px;
+            text-align: left;
+        }
+        #changeType
+        {
+            width: 245px;
+            height: 30px;
+            font-size: 15px;
+            border-radius: 20px;
+            padding-left: 10px;
+            background: #eee;
+        }
+        
+        .poswx
+        {
+            position: absolute;
+            left: 480px;
+            top: 290px;
+            height: 15px;
+            width: 244px;
+            text-align: left;
+        }
+        
+        .posvno
+        {
+            position: absolute;
+            left: 480px;
+            top: 350px;
+            height: 15px;
+            width: 244px;
+            text-align: left;
+        }
+        
+        .posbtnfw
+        {
+            border: 1px solid #000;
+            position: absolute;
+            left: 730px;
+            top: 350px;
+            height: 30px;
+            width: 74px;
+            text-align: center;
+            cursor: hand;
+            background: rgba(0,0,0,0.3);
+            border-radius: 20px;
+            color: #fff;
+            line-height: 30px;
+        }
+        .posbtnfw:hover
+        {
+            color: red;
+        }
+        
+        #tip
+        {
+            padding-left: 5px;
+            padding-bottom: 5px;
+            color: red;
+            font-size: 16px;
+        }
+        .searchResult
+        {
+            padding: 20px;
+            padding-top: 40px;
+            line-height: 25px;
+            position: absolute;
+            bottom: 1px;
+            left: 400px;
+            right: 1px;
+            top: 400px;
+            height: 80px;
+            width: 487px;
+            text-align: center;
+            background: rgba(0,0,0,0.4);
+            box-shadow: 2px 2px 5px #222;
+            border-radius: 12px;
+            color: #FF0000;
+        }
+        .searchResult a
+        {
+            font-weight: bold;
+            text-decoration: none;
+            color: #F8B300;
+        }
+        .searchResult a:hover
+        {
+            font-weight: bold;
+            text-decoration: none;
+            color: #fff;
+        }
+        
+        .bottom
+        {
+            height: 200px;
+            background-color: #25292C;
+            text-align: center;
+            padding-top: 20px;
+        }
+    </style>
+    <script type="text/javascript" language="javascript">
+
+        function onProductChange() {
+            var productID = $("#changeType").val();
+            $("#weixin").val("请输入代理微信号");
+            $("#tel").val("请输入手机号码");
+            document.getElementById('ShowProductImg').src = "../images/product" + productID + ".jpg";
+        }
+
+        function OnQuery() {
+            var productID = $("#changeType").val();
+            var xm = "";
+            var weixin = document.getElementById('weixin').value;
+            var tel = document.getElementById('tel').value;
+            if (weixin == '请输入代理微信号' && tel == '请输入手机号码') {
+                alert("请至少输入二个查询条件中的一个");
+                return;
+            }
+            if (productID == 100) {
+                window.open("../Product/ShowResult.aspx?productid=" + productID + "&uname=" + encodeURIComponent(xm) + "&weixin=" + weixin + "&tel=" + tel + "");
+            }
+            else {
+                window.open("../ShowResult.aspx?productid=" + productID + "&uname=" + encodeURIComponent(xm) + "&weixin=" + weixin + "&tel=" + tel + "");
+            }
+
+
+        }
+    </script>
+</head>
+<body>
+    <form name="form1" method="post" action="agentquery.html" id="form1">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJOTc0NjEzMTY0ZGQOpThqKyVk7GlNqGhFF6g4UFC+KQ==" />
+</div>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="23399516" />
+</div>
+    <div class="main">
+        
+<style type="text/css">
+    *
+    {
+        margin: 0px;
+        padding: 0px;
+    }
+    body
+    {
+        background: #555;
+    }
+    .top
+    {
+        height: 130px;
+        background: #1C1C1C url('../images/topbg.jpg');
+    }
+    .top .topinner
+    {
+        height: 130px;
+        width: 1100px;
+        border: 0px solid red;
+        margin: 0px auto;
+    }
+    .top .topinner .topimg
+    {
+        margin-top: 22px;
+    }
+    .top .topinner .menu
+    {
+        float: left;
+        color: #fff;
+    }
+    .top .topinner .menu ul li
+    {
+        float: left;
+        color: #fff;
+        list-style-type: none;
+        padding: 0px auto;
+        text-align: center;
+        width: 120px;
+        height: 85px;
+        line-height: 85px;
+        border: 0px solid red;
+        font-family: 微软雅黑;
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+    .top .topinner .menu ul li:hover
+    {
+        background: url('../images/menubg2.png') no-repeat 0px 28px;
+    }
+    .active
+    {
+        background: url('../images/menubg.png') no-repeat 0px 28px;
+    }
+    .top .topinner .menu ul li a
+    {
+        text-decoration: none;
+        color: #fff;
+    }
+    .flashmain
+    {
+        height: 600px;
+        background-size: 100% 100%;
+        background-color: #fff;
+        background-image: url('../images/bg1.jpg');
+        border: 1px solid #666;
+        margin-bottom: 5px;
+    }
+    .flashmain .flash
+    {
+        border: 5px solid #eee;
+        width: 1000px;
+        height: 400px;
+        background: #BF6FB6;
+        margin: 80px auto;
+        position: relative;
+        overflow: hidden;
+    }
+    .flashmain .flash ul
+    {
+        width: 90px;
+        height: 12px;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 5px 25px;
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        border-radius: 14px;
+    }
+    .flashmain .flash ul li
+    {
+        width: 10px;
+        height: 10px;
+        border: 0px solid #fff;
+        float: left;
+        color: #fff;
+        background: #ccc;
+        list-style-type: none;
+        margin-right: 8px;
+        border-radius: 6px;
+    }
+    .flashmain .flash ul li.hover
+    {
+        background: #cc6600;
+    }
+    .info
+    {
+        height: 710px;
+        background-color: #fff;
+        text-align: center;
+    }
+    .bottom
+    {
+        font-size: 14px;
+        height: 196px;
+        background-color: #363636;
+        text-align: center;
+        padding-top: 20px;
+        color: #FFFFFF;
+    }
+</style>
+<div class="top">
+    <div class="topinner">
+        <img src="../images/logo.png" width="392" height="45" class="topimg">
+        <div class="menu">
+            <ul>
+                <li id="TopMenu1"><a href="main.html">首&nbsp;&nbsp;页</a></li>
+                <li id="TopMenu4"><a href="fwquery.html">防伪查询</a></li>
+                <li id="TopMenu3"><a href="agentquery.html">代理查询</a></li>
+                <li id="TopMenu5"><a href="ImgList.html">产品图片</a></li>
+                <li id="TopMenu6"><a href="MoreImgList.html">更多图片</a></li>
+                <li id="TopMenu7"><a href="gywm.html">关于我们</a></li>
+                <li id="TopMenu2"><a href="../CheckProduct.html" target="_blank">代理后台</a></li>
+                
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript" language="javascript">
+        var menuType=3;
+        document.getElementById("TopMenu"+menuType).className = "active";
+    </script>
+</div>
+
+        <div class="fwmain">
+            <div class="fwcenter">
+                <img class="wsmmimg" src="../images/product1.jpg" id="ShowProductImg" width="305" height="460">
+                <div class="fwtitle">
+                    <h1 id="smalltile">
+                        代理查询系统</h1>
+                </div>
+                <div class="changeTypeDiv">
+                    <p id="tip">
+                        请选择产品：</p>
+                    <select id="changeType" onchange="onProductChange()">
+                        <option value="1">焕面膜</option>
+                        <option value="2">水解燕窝丝肽精华</option>
+                        <option value="100">亲新</option>
+                    </select>
+                </div>
+                <div class="poswx">
+                    <input type="text" class="inputweixin" id="weixin" name="weixin" onfocus="if (value =='请输入代理微信号'){value =''}"
+                        onblur="if (value ==''){value='请输入代理微信号'}" value="请输入代理微信号"></div>
+                <div class="posvno">
+                    <input type="text" class="inputBig" id="tel" name="tel" onfocus="if (value =='请输入手机号码'){value =''}"
+                        onblur="if (value ==''){value='请输入手机号码'}" value="请输入手机号码"></div>
+                <a href="javascript:OnQuery()">
+                    <div class="posbtnfw">
+                        查询</div>
+                </a>
+                <div class="searchResult" id="searchResult">
+                    只需要输入微信号或者手机号其中一个即可查询，请一定核实好是否为销售者本人信息，谨防真假混卖销售人员假冒他人信息。
+                </div>
+            </div>
+        </div>
+        
+<div class="bottom">
+    <table border="0" cellspacing="0" cellpadding="0" width="1200" align="center" style="margin: 0px auto;">
+        
+        <tr>
+            <td height="196">
+                <img src="../images/bottom1.jpg" width="1200" height="196" style="border: 0px;">
+            </td>
+        </tr>
+    </table>
+</div>
+
+    </div>
+    </form>
+</body>
+</html>

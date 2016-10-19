@@ -1,0 +1,103 @@
+﻿
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>博森美国际(香港）有限公司</title>
+    <link href="../style/login.css" rel="stylesheet" type="text/css" />
+    <script src="../bao/material-kit-master/assets/js/jquery.min.js"></script>
+    <script type="text/javascript">
+        function OnLogin() {
+            var uname = $("#input1").val();
+            var pwd = $("#input2").val();
+            if (uname == "")
+                alert("请输入用户名");
+            else if (pwd == "")
+                alert("请输入密码");
+            else {
+                $.ajax({
+                    type: "GET",
+                    cache: false,
+                    url: "Ajax.aspx",
+                    data: "AjaxType=UserLogin&uname=" + encodeURIComponent(uname) + "&pwd=" + encodeURIComponent(pwd) + "&ran=" + Math.random() + "",
+                    dataType: 'text',
+                    success: UserLoginSucess,
+                    error: AjaxError
+                });
+            }
+        }
+
+        function UserLoginSucess(result) {
+            if (result == "0")
+                location.href = "/index.aspx";
+            else
+                alert(result);
+        }
+
+        function AjaxError(result, status) {
+            alert("服务器忙。请稍后再试!");
+        }
+
+        function ResetForm() {
+            $("#input1").val("");
+            $("#input2").val("");
+        }
+    </script>
+    <style type="text/css">
+        .btn1 {
+            width: 106px;
+            height: 24px;
+            background-image: url(../images/subbtn.png);
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .ProductBtn1 {
+            position: absolute;
+            left: 675px;
+            top: 338px;
+        }
+
+        .ProductBtn2 {
+            position: absolute;
+            left: 675px;
+            top: 368px;
+        }
+
+        .ProductBtn3 {
+            position: absolute;
+            left: 675px;
+            top: 408px;
+        }
+    </style>
+    <script type="text/javascript" language="javascript">
+        function OnClickProductType(type) {
+            if (type == 1) {
+                window.top.location.href = "login.html";
+            }
+            else {
+                window.top.location.href = "login.html";
+            }
+
+        }
+
+    </script>
+</head>
+<body>
+    <div class="outerDiv">
+        <div class="mainDiv" style="background-image: url(../images/mainbg1.jpg);">
+            <div class="LoginTitleDiv">
+                请选择品牌>>进入系统
+            </div>
+            <input type="button" onclick="OnClickProductType(1)" class="btn1 ProductBtn1" value="焕我生活" onmouseover="this.style.backgroundImage='url(../images/subbtn1.png)';"
+                   onmouseout="this.style.backgroundImage='url(../images/subbtn.png)';" />
+
+            <input type="button" onclick="OnClickProductType(2)" class="btn1 ProductBtn3" value="亲新" onmouseover="this.style.backgroundImage='url(../images/subbtn1.png)';"
+                   onmouseout="this.style.backgroundImage='url(../images/subbtn.png)';" />
+        </div>
+    </div>
+</body>
+</html>

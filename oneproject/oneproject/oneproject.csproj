@@ -1,0 +1,404 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7451D36D-0418-4309-A71B-02B0EE11052D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>oneproject</RootNamespace>
+    <AssemblyName>oneproject</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\aboutflash.jpg" />
+    <Content Include="images\aboutinfo.jpg" />
+    <Content Include="images\agentbg.jpg" />
+    <Content Include="images\bg1.jpg" />
+    <Content Include="images\bg2.jpg" />
+    <Content Include="images\bg3.jpg" />
+    <Content Include="images\bg4.jpg" />
+    <Content Include="images\bg5.jpg" />
+    <Content Include="images\bgpp.png" />
+    <Content Include="images\bottom.jpg" />
+    <Content Include="images\bottom1.jpg" />
+    <Content Include="images\contact.jpg" />
+    <Content Include="images\fwbg.jpg" />
+    <Content Include="images\fwcenter.jpg" />
+    <Content Include="images\fwimg.jpg" />
+    <Content Include="images\gywm1.jpg" />
+    <Content Include="images\gywm2.jpg" />
+    <Content Include="images\gywm3.jpg" />
+    <Content Include="images\img1.jpg" />
+    <Content Include="images\index1.jpg" />
+    <Content Include="images\index2.jpg" />
+    <Content Include="images\index3.jpg" />
+    <Content Include="images\index4.jpg" />
+    <Content Include="images\index5.jpg" />
+    <Content Include="images\info.jpg" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\mainbg1.jpg" />
+    <Content Include="images\menubg.png" />
+    <Content Include="images\menubg2.png" />
+    <Content Include="images\product1.jpg" />
+    <Content Include="images\product100.jpg" />
+    <Content Include="images\product2.jpg" />
+    <Content Include="images\subbtn.png" />
+    <Content Include="images\topbanner.jpg" />
+    <Content Include="images\topbg.jpg" />
+    <Content Include="images\verone.jpg" />
+    <Content Include="images\wsmm.jpg" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="bao\material-kit-master\assets\css\material-kit.css.map" />
+    <Content Include="bao\material-kit-master\assets\sass\material-kit.scss" />
+    <Content Include="bao\material-kit-master\assets\sass\material-kit\plugins\_plugin-datepicker.scss" />
+    <Content Include="bao\material-kit-master\assets\sass\material-kit\plugins\_plugin-dropdownjs.scss" />
+    <Content Include="bao\material-kit-master\assets\sass\material-kit\plugins\_plugin-nouislider.scss" />
+    <Content Include="bao\material-kit-master\assets\sass\material-kit\plugins\_plugin-selectize.scss" />
+    <Content Include="bao\material-kit-master\assets\sass\material-kit\plugins\_plugin-snackbarjs.scss" />
+    <Content Include="bao\material-kit-master\assets\sass\material-kit\_alerts.scss" />
+    <Content Include="bao\material-kit-master\assets\sass\material-kit\_buttons.scss" />
+    <Content Include="bao\material-kit-master\assets\sass\material-kit\_cards.scss" />
+    <Content Include="bao\material-kit-master\assets\sass\material-kit\_carousel.scss" />
+    <Content Include="bao\material-kit-master\assets\sass\material-kit\_checkboxes.scss" />
+    <Content Include="bao\material-kit-master\assets\sass\material-kit\_colors.scss" />
+    <Content Include="bao\material-kit-master\assets\sass\material-kit\_core.scss" />
+    <Content Include="bao\material-kit-master\assets\sass\material-kit\_dialogs.scss" />
+    <Content Include="bao\material-kit-master\assets\sass\material-kit\_dividers.scss" />
+    <Content Include="bao\material-kit-master\assets\sass\material-kit\_dropdown.scss" />
+    <Content Include="bao\material-kit-master\assets\sass\material-kit\_example-pages.scss" />
+    <Content Include="bao\material-kit-master\assets\sass\material-kit\_footers.scss" />
+    <Content Include="bao\material-kit-master\assets\sass\material-kit\_form.scss" />
+    <Content Include="bao\material-kit-master\assets\sass\material-kit\_images.scss" />
+    <Content Include="bao\material-kit-master\assets\sass\material-kit\_import-bs-less.scss" />
+    <Content Include="bao\material-kit-master\assets\sass\material-kit\_import-bs-sass.scss" />
+    <Content Include="bao\material-kit-master\assets\sass\material-kit\_info-areas.scss" />
+    <Content Include="bao\material-kit-master\assets\sass\material-kit\_inputs-size.scss" />
+    <Content Include="bao\material-kit-master\assets\sass\material-kit\_inputs.scss" />
+    <Content Include="bao\material-kit-master\assets\sass\material-kit\_labels.scss" />
+    <Content Include="bao\material-kit-master\assets\sass\material-kit\_lists.scss" />
+    <Content Include="bao\material-kit-master\assets\sass\material-kit\_mixins.scss" />
+    <Content Include="bao\material-kit-master\assets\sass\material-kit\_navbar.scss" />
+    <Content Include="bao\material-kit-master\assets\sass\material-kit\_pagination.scss" />
+    <Content Include="bao\material-kit-master\assets\sass\material-kit\_panels.scss" />
+    <Content Include="bao\material-kit-master\assets\sass\material-kit\_pills.scss" />
+    <Content Include="bao\material-kit-master\assets\sass\material-kit\_popups.scss" />
+    <Content Include="bao\material-kit-master\assets\sass\material-kit\_progress.scss" />
+    <Content Include="bao\material-kit-master\assets\sass\material-kit\_radios.scss" />
+    <Content Include="bao\material-kit-master\assets\sass\material-kit\_ripples.scss" />
+    <Content Include="bao\material-kit-master\assets\sass\material-kit\_sections.scss" />
+    <Content Include="bao\material-kit-master\assets\sass\material-kit\_shadows.scss" />
+    <Content Include="bao\material-kit-master\assets\sass\material-kit\_tabs.scss" />
+    <Content Include="bao\material-kit-master\assets\sass\material-kit\_togglebutton.scss" />
+    <Content Include="bao\material-kit-master\assets\sass\material-kit\_typography.scss" />
+    <Content Include="bao\material-kit-master\assets\sass\material-kit\_variables.scss" />
+    <Content Include="bao\material-kit-master\assets\sass\material-kit\_variables_bootstrap.scss" />
+    <Content Include="bao\material-kit-master\assets\sass\material-kit\_welljumbo.scss" />
+    <Content Include="bao\material-kit-master\Creative Tim License.pdf" />
+    <Content Include="bao\material-kit-master\README.md" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bao\material-kit-master\assets\css\bootstrap.min.css" />
+    <Content Include="bao\material-kit-master\assets\css\demo.css" />
+    <Content Include="bao\material-kit-master\assets\css\material-kit.css" />
+    <Content Include="bao\material-kit-master\assets\img\apple-icon.png" />
+    <Content Include="bao\material-kit-master\assets\img\arrow-left.cur" />
+    <Content Include="bao\material-kit-master\assets\img\arrow-left.png" />
+    <Content Include="bao\material-kit-master\assets\img\arrow-right.cur" />
+    <Content Include="bao\material-kit-master\assets\img\arrow-right.png" />
+    <Content Include="bao\material-kit-master\assets\img\avatar.jpg" />
+    <Content Include="bao\material-kit-master\assets\img\bg.jpg" />
+    <Content Include="bao\material-kit-master\assets\img\bg2.jpeg" />
+    <Content Include="bao\material-kit-master\assets\img\bg3.jpeg" />
+    <Content Include="bao\material-kit-master\assets\img\bg4.jpeg" />
+    <Content Include="bao\material-kit-master\assets\img\christian.jpg" />
+    <Content Include="bao\material-kit-master\assets\img\city.jpg" />
+    <Content Include="bao\material-kit-master\assets\img\default-avatar.png" />
+    <Content Include="bao\material-kit-master\assets\img\examples\chris0.jpg" />
+    <Content Include="bao\material-kit-master\assets\img\examples\chris1.jpg" />
+    <Content Include="bao\material-kit-master\assets\img\examples\chris3.jpg" />
+    <Content Include="bao\material-kit-master\assets\img\examples\chris4.jpg" />
+    <Content Include="bao\material-kit-master\assets\img\examples\chris5.jpg" />
+    <Content Include="bao\material-kit-master\assets\img\examples\chris6.jpg" />
+    <Content Include="bao\material-kit-master\assets\img\examples\chris7.jpg" />
+    <Content Include="bao\material-kit-master\assets\img\examples\chris8.jpg" />
+    <Content Include="bao\material-kit-master\assets\img\examples\chris9.jpg" />
+    <Content Include="bao\material-kit-master\assets\img\examples\city.jpg" />
+    <Content Include="bao\material-kit-master\assets\img\favicon.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\AD.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\AE.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\AG.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\AM.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\AR.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\AT.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\AU.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\BE.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\BF.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\BG.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\BO.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\BR.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\CA.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\CD.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\CG.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\CH.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\CL.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\CM.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\CN.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\CO.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\CZ.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\DE.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\DJ.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\DK.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\DZ.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\EE.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\EG.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\ES.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\FI.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\FR.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\GA.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\GB.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\GM.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\GT.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\HN.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\HT.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\HU.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\ID.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\IE.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\IL.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\IN.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\IQ.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\IR.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\IT.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\JM.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\JO.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\JP.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\KG.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\KN.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\KP.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\KR.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\KW.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\KZ.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\LA.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\LB.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\LC.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\LS.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\LU.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\LV.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\MG.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\MK.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\ML.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\MM.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\MT.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\MX.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\NA.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\NE.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\NG.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\NI.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\NL.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\NO.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\OM.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\PA.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\PE.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\PG.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\PK.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\PL.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\PT.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\PY.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\QA.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\RO.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\RU.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\RW.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\SA.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\SE.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\SG.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\SL.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\SN.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\SO.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\SV.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\TD.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\TJ.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\TL.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\TR.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\TZ.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\UA.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\US.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\VE.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\VN.png" />
+    <Content Include="bao\material-kit-master\assets\img\flags\YE.png" />
+    <Content Include="bao\material-kit-master\assets\img\kendall.jpg" />
+    <Content Include="bao\material-kit-master\assets\img\landing.jpg" />
+    <Content Include="bao\material-kit-master\assets\img\loading-bubbles.svg" />
+    <Content Include="bao\material-kit-master\assets\img\logo.png" />
+    <Content Include="bao\material-kit-master\assets\img\marc.jpg" />
+    <Content Include="bao\material-kit-master\assets\img\profile.jpg" />
+    <Content Include="bao\material-kit-master\assets\js\bootstrap-datepicker.js" />
+    <Content Include="bao\material-kit-master\assets\js\bootstrap.min.js" />
+    <Content Include="bao\material-kit-master\assets\js\jquery.min.js" />
+    <Content Include="bao\material-kit-master\assets\js\material-kit.js" />
+    <Content Include="bao\material-kit-master\assets\js\material.min.js" />
+    <Content Include="bao\material-kit-master\assets\js\nouislider.min.js" />
+    <Content Include="bao\material-kit-master\changelog.txt" />
+    <Content Include="bao\material-kit-master\components-documentation.html" />
+    <Content Include="bao\material-kit-master\examples\landing-page.html" />
+    <Content Include="bao\material-kit-master\examples\profile-page.html" />
+    <Content Include="bao\material-kit-master\examples\signup-page.html" />
+    <Content Include="bao\material-kit-master\index.html" />
+    <Content Include="bao\material-kit-master\template.html" />
+    <Content Include="bao\material-kit-master\tutorial.html" />
+    <Content Include="plug\My97DatePicker\calendar.js" />
+    <Content Include="plug\My97DatePicker\config.js" />
+    <Content Include="plug\My97DatePicker\lang\zn-cn.js" />
+    <Content Include="plug\My97DatePicker\My97DatePicker.htm" />
+    <Content Include="plug\My97DatePicker\skin\default\datepicker.css" />
+    <Content Include="plug\My97DatePicker\skin\WdatePicker.css" />
+    <Content Include="plug\My97DatePicker\WdatePicker.js" />
+    <Content Include="scripts\perloadimg.js" />
+    <Content Include="view\agentquery.html" />
+    <Content Include="view\checkProduct.html" />
+    <Content Include="view\fwquery.html" />
+    <Content Include="view\gywm.html" />
+    <Content Include="view\imgList.html" />
+    <Content Include="view\imgList2.html" />
+    <Content Include="view\imgList3.html" />
+    <Content Include="view\main.html" />
+    <Content Include="view\moreImgList.html" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="productImg\product1\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>65374</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:65374/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
